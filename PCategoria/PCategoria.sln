@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCategoria", "PCategoria\PCategoria.csproj", "{0AD82FB8-140B-496C-9922-389754AE17D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSerpisAd", "PSerpisAd\PSerpisAd.csproj", "{400FCE6B-2730-40BD-87BA-144697FE6617}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{0AD82FB8-140B-496C-9922-389754AE17D5}.Debug|x86.Build.0 = Debug|x86
 		{0AD82FB8-140B-496C-9922-389754AE17D5}.Release|x86.ActiveCfg = Release|x86
 		{0AD82FB8-140B-496C-9922-389754AE17D5}.Release|x86.Build.0 = Release|x86
+		{400FCE6B-2730-40BD-87BA-144697FE6617}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{400FCE6B-2730-40BD-87BA-144697FE6617}.Debug|x86.Build.0 = Debug|Any CPU
+		{400FCE6B-2730-40BD-87BA-144697FE6617}.Release|x86.ActiveCfg = Release|Any CPU
+		{400FCE6B-2730-40BD-87BA-144697FE6617}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = PCategoria\PCategoria.csproj

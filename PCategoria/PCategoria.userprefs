@@ -1,9 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PCategoria/MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PSerpisAd/DbCommandExtensions.cs">
     <Files>
-      <File FileName="PCategoria/MainWindow.cs" Line="140" Column="3" />
-      <File FileName="PCategoria/Categoriaview.cs" Line="13" Column="4" />
+      <File FileName="PCategoria/MainWindow.cs" Line="22" Column="31" />
+      <File FileName="PCategoria/Categoriaview.cs" Line="5" Column="1" />
+      <File FileName="PCategoria/Program.cs" Line="14" Column="29" />
+      <File FileName="PSerpisAd/App.cs" Line="27" Column="4" />
+      <File FileName="PSerpisAd/DbCommandExtensions.cs" Line="3" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,6 +1,10 @@
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 using System;
+using System.Data;
+using SerpisAd;
+
 namespace PCategoria
+
 {
 	public partial class Categoriaview : Gtk.Window
 	{
@@ -8,30 +12,36 @@ namespace PCategoria
 		public Categoriaview () : base(Gtk.WindowType.Toplevel)	{
 			this.Build ();
 		}
+
 		public Categoriaview(object id) : this() {
 			this.id = id;
-			 MySqlCommand mySqlCommand =
-				App.Instance.MySqlConnection.CreateCommand ();
-			mySqlCommand.CommandText = String.Format (
+			IDbCommand dbCommand =
+				App.Instance.DbConnection.CreateCommand ();
+			dbCommand.CommandText = String.Format (
 				"select * from categoria where id={0}", id
 				);
-			MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader ();
-			mySqlDataReader.Read ();
-			entryNombre.Text = mySqlDataReader ["nombre"].ToString ();
-			mySqlDataReader.Close ();
+			IDataReader dataReader = dbCommand.ExecuteReader ();
+			dataReader.Read ();
+			entryNombre.Text = dataReader ["nombre"].ToString ();
+			dataReader.Close ();
 		}
+
 		protected void OnSaveActionActivated (object sender, EventArgs e)
 		{
-			MySqlCommand mySqlCommand =
-				App.Instance.MySqlConnection.CreateCommand ();
-			mySqlCommand.CommandText = String.Format (
+			IDbCommand dbCommand =
+				App.Instance.DbConnection.CreateCommand ();
+			dbCommand.CommandText = String.Format (
 				"update categoria set nombre=@nombre where id={0}", id
 				);
-			MySqlParameter mySqlParameter = mySqlCommand.CreateParameter ();
-			mySqlParameter.ParameterName = "nombre";
-			mySqlParameter.Value = entryNombre.Text;
-			mySqlCommand.Parameters.Add (mySqlParameter);
-			mySqlCommand.ExecuteNonQuery ();
+//			IDbDataParameter dbDataParameter = dbCommand.CreateParameter ();
+//			dbDataParameter.ParameterName = "nombre";
+//			dbDataParameter.Value = entryNombre.Text;
+//			dbCommand.Parameters.Add (dbDataParameter);
+
+//			DbCommandExtensions.AddParameter (dbCommand, "nombre", entryNombre.Text);
+			dbCommand.AddParameter ("nombre",entryNombre.Text);
+
+			dbCommand.ExecuteNonQuery ();
 			Destroy ();
 		}
 	}

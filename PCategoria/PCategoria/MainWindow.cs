@@ -4,22 +4,13 @@ using System.Data;
 using MySql.Data.MySqlClient;
 
 using PCategoria;
+using SerpisAd;
+
 
 public partial class MainWindow: Gtk.Window
 {	
 	private ListStore listStore;
-
-	/*private string connectionString =
-		"Server=localhost;" +
-			"Database=dbprueba;" +
-			"User ID=root;" +
-			"Password=sistemas";
-	*/
-	private MySqlConnection mySqlConnection;
-	///private MySqlCommand mySqlCommand;
-
-
-
+	private IDbConnection dbConnection;
 
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
@@ -28,7 +19,8 @@ public partial class MainWindow: Gtk.Window
 		deleteAction1.Sensitive = false;
 		editAction.Sensitive = false;
 
-		mySqlConnection = App.Instance.MySqlConnection;
+		dbConnection = App.Instance.DbConnection;
+
 
 		treeView.AppendColumn ("ID", new CellRendererText (), "text", 0);
 		treeView.AppendColumn ("Nombre", new CellRendererText (), "text", 1);
@@ -66,9 +58,9 @@ public partial class MainWindow: Gtk.Window
 	protected void OnAddActionActivated (object sender, EventArgs e)
 	{
 		//mySqlConnection.Open();
-		MySqlCommand mySqlCommand = mySqlConnection.CreateCommand ();
-		mySqlCommand.CommandText = string.Format("INSERT into categoria (nombre) value ('{0}')",DateTime.Now);
-		mySqlCommand.ExecuteNonQuery ();
+		IDbCommand dbCommand = dbConnection.CreateCommand ();
+		dbCommand.CommandText = string.Format("INSERT into categoria (nombre) value ('{0}')",DateTime.Now);
+		dbCommand.ExecuteNonQuery ();
 		//mySqlConnection.Close ();
 	}
 
@@ -83,11 +75,11 @@ public partial class MainWindow: Gtk.Window
 
 	protected void Lectura(){
 		//mySqlConnection = new MySqlConnection (connectionString);
-		MySqlCommand mySqlCommand = mySqlConnection.CreateCommand ();
+		IDbCommand dbCommand = dbConnection.CreateCommand ();
 
 		//mySqlConnection.Open();
-		mySqlCommand.CommandText = "SELECT * FROM categoria ";
-		MySqlDataReader reader =mySqlCommand.ExecuteReader();
+		dbCommand.CommandText = "SELECT * FROM categoria ";
+		IDataReader reader = dbCommand.ExecuteReader ();
 
 		while(reader.Read()) {
 			string FirstName = (string) reader["nombre"];
@@ -109,9 +101,9 @@ public partial class MainWindow: Gtk.Window
 			return;
 
 		//mySqlConnection.Open();
-		MySqlCommand mySqlCommand = mySqlConnection.CreateCommand ();
-		mySqlCommand.CommandText = string.Format ("DELETE FROM `categoria` WHERE id={0}", id);
-		mySqlCommand.ExecuteNonQuery ();
+		IDbCommand dbCommand = dbConnection.CreateCommand ();
+		dbCommand.CommandText = string.Format ("DELETE FROM `categoria` WHERE id={0}", id);
+		dbCommand.ExecuteNonQuery ();
 		//mySqlConnection.Close ();
 
 	}
