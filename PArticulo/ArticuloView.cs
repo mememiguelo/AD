@@ -61,6 +61,11 @@ namespace PArticulo
 		}
 		protected void OnAddActionActivated (object sender, EventArgs e)
 		{
+			Console.WriteLine (entryNombre.Text.Length);
+
+			if(entryNombre.Text.Length>0 && entryCategoria.Text.Length>0 && entryPrecio.Text.Length>0){
+
+			}
 			IDbCommand dbCommand =
 				App.Instance.DbConnection.CreateCommand ();
 			dbCommand.CommandText = String.Format (
