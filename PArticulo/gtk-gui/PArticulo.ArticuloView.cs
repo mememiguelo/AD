@@ -19,6 +19,7 @@ namespace PArticulo
 		private global::Gtk.HBox hbox6;
 		private global::Gtk.Label label8;
 		private global::Gtk.Entry entryPrecio;
+		private global::Gtk.ComboBox comboBox;
 
 		protected virtual void Build ()
 		{
@@ -139,6 +140,14 @@ namespace PArticulo
 			w12.Position = 1;
 			w12.Expand = false;
 			w12.Fill = false;
+			// Container child vbox3.Gtk.Box+BoxChild
+			this.comboBox = global::Gtk.ComboBox.NewText ();
+			this.comboBox.Name = "comboBox";
+			this.vbox3.Add (this.comboBox);
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.comboBox]));
+			w13.Position = 2;
+			w13.Expand = false;
+			w13.Fill = false;
 			this.Add (this.vbox3);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
