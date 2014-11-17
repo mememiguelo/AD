@@ -36,11 +36,11 @@ public partial class MainWindow
 		w2.Expand = false;
 		w2.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.comboBox = global::Gtk.ComboBox.NewText ();
+		this.comboBox = new global::Gtk.ComboBox ();
 		this.comboBox.Name = "comboBox";
 		this.vbox1.Add (this.comboBox);
 		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.comboBox]));
-		w3.Position = 2;
+		w3.Position = 1;
 		w3.Expand = false;
 		w3.Fill = false;
 		this.Add (this.vbox1);
