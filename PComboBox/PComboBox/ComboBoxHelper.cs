@@ -1,7 +1,12 @@
 using System;
 using Gtk;
 using System.Data;
-
+/****
+ * 
+ * Este archivo ya no se utiliza , ahora esta funcion se realiza desde SerpisAd
+ * Cambios de dia 17 / 11 / 2014
+ * 
+ ****/
 namespace SerpisAd
 {
 	public class ComboBoxHelper

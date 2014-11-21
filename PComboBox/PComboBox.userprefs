@@ -1,10 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PComboBox/ComboBoxHelper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PComboBox/MainWindow.cs">
     <Files>
-      <File FileName="PComboBox/Program.cs" Line="9" Column="17" />
-      <File FileName="PComboBox/MainWindow.cs" Line="16" Column="47" />
-      <File FileName="PComboBox/ComboBoxHelper.cs" Line="13" Column="134" />
+      <File FileName="PComboBox/Program.cs" Line="5" Column="1" />
+      <File FileName="PComboBox/MainWindow.cs" Line="12" Column="40" />
+      <File FileName="../PArticulo/ArticuloView.cs" Line="3" Column="15" />
+      <File FileName="../PCategoria/PSerpisAd/ComboBoxHelper.cs" Line="17" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
