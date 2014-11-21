@@ -4,7 +4,7 @@
     <Files>
       <File FileName="../PComboBox/PComboBox/Program.cs" Line="9" Column="17" />
       <File FileName="../PComboBox/PComboBox/MainWindow.cs" Line="16" Column="47" />
-      <File FileName="../PComboBox/PComboBox/ComboBoxHelper.cs" Line="9" Column="54" />
+      <File FileName="../PComboBox/PComboBox/ComboBoxHelper.cs" Line="13" Column="134" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
