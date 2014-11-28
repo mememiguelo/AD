@@ -2,6 +2,7 @@ using System;
 
 namespace PReflection
 {
+	[Entity(TableName = "category")]
 	public class Categoria
 	{
 		//public ulong Id { get; set; }

@@ -13,6 +13,17 @@ public partial class MainWindow: Gtk.Window
 
 		//showInfo (typeof(Articulo));
 
+		//Type type = typeof(MainWindow);
+		Assembly assembly = Assembly.GetExecutingAssembly ();
+		foreach (Type type in assembly.GetTypes()) {
+			if (type.IsDefined (typeof(EntityAttribute), true)) {
+				EntityAttribute entityAttribute = 
+					(EntityAttribute)Attribute.GetCustomAttribute (type, typeof(EntityAttribute));
+				Console.WriteLine ("type.Name={0} entityAttribute.TableName={1}", type.Name,entityAttribute.TableName);
+			}
+		}
+		//assembly.
+
 		Categoria categoria = new Categoria (22, "Luis");
 
 		showValues (categoria);
