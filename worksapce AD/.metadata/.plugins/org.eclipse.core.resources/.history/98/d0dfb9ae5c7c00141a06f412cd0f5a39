@@ -1,0 +1,40 @@
+package serpis.ad;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public class MySql {
+	
+	private static Scanner scanner = new Scanner(System.in);
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		System.out.println("Hola mundo");
+		System.out.println("Dime tu nombre");
+		String nombre = scanner.nextLine();
+		Connection connection = DriverManager.getConnection(
+				"jdbc:mysql://localhost/dbprueba?user=root&password=sistemas");
+		//Statement statement =connection.createStatement();
+		//ResultSet resulSet = statement.executeQuery("select * from categoria");
+		
+		PreparedStatement preparredStatement = connection.prepareStatement("select * from categoria where id = ?");
+		
+		preparredStatement.setLong(1, 11);
+		ResultSet resulSet = preparredStatement.executeQuery();
+		
+		while(resulSet.next()){
+			System.out.printf("id=%4s nombre=%s \n", resulSet.getObject("id"),resulSet.getObject("nombre"));
+		}
+		
+		resulSet.close();
+		preparredStatement.close();
+		connection.close();
+	}
+
+}

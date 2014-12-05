@@ -1,0 +1,11 @@
+package serpis.ad;
+
+import java.sql.SQLException;
+
+
+public class JArticulo {
+	
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+	}
+}

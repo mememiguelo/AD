@@ -1,0 +1,50 @@
+//package serpis.ad;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
+public class JArticulo {
+	
+	private static Scanner scanner = new Scanner(System.in);
+	
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		Connection connection = DriverManager.getConnection(
+				"jdbc:mysql://localhost/dbprueba?user=root&password=sistemas");
+		PreparedStatement preparedStatement;
+		
+		System.out.println("/*********************\\");
+		System.out.println("|Menu de mantenimiento|");
+		System.out.println("\\*********************/");
+		System.out.println("0 - SALIR");
+		System.out.println("1 - NUEVO");
+		System.out.println("2 - EDITAR");
+		System.out.println("3 - ELIMINAR");
+		System.out.println("4 - VER TABLA");
+		
+		int opcion = scanner.nextInt();
+		
+		switch(opcion){
+			case 0:
+				System.out.println("Adios!");
+				break;
+			case 1:
+				System.out.println
+				preparedStatement = connection.prepareStatement("INSERT INTO `categoria`(`nombre`, `categoria`, `precio`) VALUES (?)");
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+		}
+		
+	}
+}
