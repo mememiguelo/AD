@@ -1,0 +1,48 @@
+package serpis.ad;
+
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table( name = "Categoria" )
+public class Categoria {
+	private String nombre;
+	private long id;
+	
+	public Categoria(){
+		
+	}
+	/*
+	public Categoria(String nombre,long id){
+		this.nombre=nombre;
+		this.id=id;
+	}
+	*/
+	public String getNombre(){
+		return nombre;
+	}
+	
+	public void setNombre(String nombre){
+		this.nombre=nombre;
+	}
+
+	@Id
+	@GeneratedValue(generator="increment")
+	@GenericGenerator(name="increment", strategy = "increment")
+	public long getId(){
+		return id;
+	}
+	
+	private void setId(long id){
+		this.id=id;
+	}
+
+}

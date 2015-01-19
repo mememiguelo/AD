@@ -1,0 +1,43 @@
+package serpis.ad;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+
+import junit.framework.TestCase;
+
+
+public class HibernateCategoria {
+	
+	public static void main(String [] args){
+		
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "serpis.ad.jpa.mysql" );
+		
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		entityManager.getTransaction().begin();
+		entityManager.persist( new Categoria( "Our very first event!",100) );
+		entityManager.persist( new Categoria( "A follow up event",101  ));
+		entityManager.getTransaction().commit();
+		entityManager.close();
+		
+		entityManager = entityManagerFactory.createEntityManager();
+		entityManager.getTransaction().begin();
+        List<Categoria> result = entityManager.createQuery( "from Categoria", Categoria.class ).getResultList();
+		for ( Categoria categoria : result ) {
+			System.out.println( "Categoria (" + categoria.getNombre() + ") : " + categoria.getId() );
+		}
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        
+        entityManagerFactory.close();
+		
+	}
+
+}

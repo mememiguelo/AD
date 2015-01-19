@@ -1,0 +1,14 @@
+package serpis.ad;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
+
+public class HibernateCategoria {
+	
+	public static void main(String [] args){
+		
+		EntityManager entityManager = Persistence.createEntityManagerFactory( "serpis.ad.jpa.mysql" );
+		
+	}
+
+}
